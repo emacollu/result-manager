@@ -1,0 +1,333 @@
+{
+  "#select": {
+    "columns": [
+      {
+        "name": "rstmt",
+        "kind": "Entity"
+      },
+      {
+        "kind": "Entity"
+      },
+      {
+        "kind": "Entity"
+      }
+    ],
+    "tuples": [
+      [
+        {
+          "id": 506,
+          "label": "if (...)",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 32,
+            "startColumn": 9,
+            "endLine": 32,
+            "endColumn": 28
+          }
+        },
+        {
+          "id": 522,
+          "label": "{ ... }",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 32,
+            "startColumn": 30,
+            "endLine": 39,
+            "endColumn": 9
+          }
+        },
+        {
+          "id": 519,
+          "label": "... != ...",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 32,
+            "startColumn": 13,
+            "endLine": 32,
+            "endColumn": 27
+          }
+        }
+      ],
+      [
+        {
+          "id": 545,
+          "label": "if (...)",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 34,
+            "startColumn": 13,
+            "endLine": 34,
+            "endColumn": 26
+          }
+        },
+        {
+          "id": 551,
+          "label": "{ ... }",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 34,
+            "startColumn": 28,
+            "endLine": 37,
+            "endColumn": 13
+          }
+        },
+        {
+          "id": 549,
+          "label": "... != ...",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 34,
+            "startColumn": 17,
+            "endLine": 34,
+            "endColumn": 25
+          }
+        }
+      ],
+      [
+        {
+          "id": 956,
+          "label": "if (...)",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 64,
+            "startColumn": 9,
+            "endLine": 64,
+            "endColumn": 56
+          }
+        },
+        {
+          "id": 968,
+          "label": "{ ... }",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 64,
+            "startColumn": 58,
+            "endLine": 66,
+            "endColumn": 9
+          }
+        },
+        {
+          "id": 966,
+          "label": "... || ...",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 64,
+            "startColumn": 13,
+            "endLine": 64,
+            "endColumn": 55
+          }
+        }
+      ],
+      [
+        {
+          "id": 956,
+          "label": "if (...)",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 64,
+            "startColumn": 9,
+            "endLine": 64,
+            "endColumn": 56
+          }
+        },
+        {
+          "id": 970,
+          "label": "{ ... }",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 66,
+            "startColumn": 16,
+            "endLine": 75,
+            "endColumn": 9
+          }
+        },
+        {
+          "id": 966,
+          "label": "... || ...",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 64,
+            "startColumn": 13,
+            "endLine": 64,
+            "endColumn": 55
+          }
+        }
+      ],
+      [
+        {
+          "id": 1033,
+          "label": "if (...)",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 69,
+            "startColumn": 17,
+            "endLine": 69,
+            "endColumn": 30
+          }
+        },
+        {
+          "id": 1037,
+          "label": "{ ... }",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 69,
+            "startColumn": 32,
+            "endLine": 72,
+            "endColumn": 17
+          }
+        },
+        {
+          "id": 1035,
+          "label": "... != ...",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 69,
+            "startColumn": 21,
+            "endLine": 69,
+            "endColumn": 29
+          }
+        }
+      ],
+      [
+        {
+          "id": 1129,
+          "label": "if (...)",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 82,
+            "startColumn": 9,
+            "endLine": 82,
+            "endColumn": 22
+          }
+        },
+        {
+          "id": 1143,
+          "label": "{ ... }",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 82,
+            "startColumn": 24,
+            "endLine": 85,
+            "endColumn": 9
+          }
+        },
+        {
+          "id": 1141,
+          "label": "... != ...",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 82,
+            "startColumn": 13,
+            "endLine": 82,
+            "endColumn": 21
+          }
+        }
+      ],
+      [
+        {
+          "id": 1261,
+          "label": "if (...)",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 95,
+            "startColumn": 9,
+            "endLine": 95,
+            "endColumn": 22
+          }
+        },
+        {
+          "id": 1283,
+          "label": "{ ... }",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 95,
+            "startColumn": 24,
+            "endLine": 98,
+            "endColumn": 9
+          }
+        },
+        {
+          "id": 1281,
+          "label": "... != ...",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 95,
+            "startColumn": 13,
+            "endLine": 95,
+            "endColumn": 21
+          }
+        }
+      ],
+      [
+        {
+          "id": 1389,
+          "label": "while (...)",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 107,
+            "startColumn": 13,
+            "endLine": 107,
+            "endColumn": 53
+          }
+        },
+        {
+          "id": 1420,
+          "label": "{ ... }",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 107,
+            "startColumn": 55,
+            "endLine": 110,
+            "endColumn": 13
+          }
+        },
+        {
+          "id": 1418,
+          "label": "... != ...",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 107,
+            "startColumn": 20,
+            "endLine": 107,
+            "endColumn": 52
+          }
+        }
+      ],
+      [
+        {
+          "id": 1414,
+          "label": "while (...)",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 113,
+            "startColumn": 13,
+            "endLine": 113,
+            "endColumn": 53
+          }
+        },
+        {
+          "id": 1461,
+          "label": "{ ... }",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 113,
+            "startColumn": 55,
+            "endLine": 116,
+            "endColumn": 13
+          }
+        },
+        {
+          "id": 1459,
+          "label": "... != ...",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 113,
+            "startColumn": 20,
+            "endLine": 113,
+            "endColumn": 52
+          }
+        }
+      ]
+    ]
+  }
+}
