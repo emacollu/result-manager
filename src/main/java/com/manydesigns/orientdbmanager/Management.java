@@ -37,7 +37,7 @@ import static com.manydesigns.orientdbmanager.Constants.JSON_RESULT;
 @Slf4j
 public class Management {
 
-    private static final int INDEX_END_SELECT = 0;
+    private static final int INDEX_END_SELECT = 2;
     private static final int INDEX_START_SELECT = 1;
     private static final Map<String, CompilationUnit> parsedFiles = new HashMap<>();
 
@@ -62,33 +62,61 @@ public class Management {
             );
 
             var currentNode = startEl.getId();
-            var level = 1;
+            List<Integer> steps = new ArrayList<>();
+            steps.add(currentNode);
             var lastEdgeChecked = 0;
-            do {
-                var edgeTuples = result.getEdges().getTuples();
-                while (lastEdgeChecked < edgeTuples.size()) {
-                    var edge = edgeTuples.get(lastEdgeChecked);
-                    if (edge.get(0).getId().equals(currentNode)) {
-                        TupleEl newStep = edge.get(1);
+            var edgeTuples = result.getEdges().getTuples();
+            List<List<TupleEl>> skippedTuple = new ArrayList<>();
+            while (!Objects.equals(currentNode, endEl.getId()) && lastEdgeChecked < edgeTuples.size()) {
+                var edge = edgeTuples.get(lastEdgeChecked);
+                if (edge.get(0).getId().equals(currentNode)) {
+                    TupleEl newStep = edge.get(1);
 
-                        var conditionalNodes = getConditions(newStep);
-                        for (var condition : conditionalNodes) {
-                            path.addConditionalNode(condition);
-
-                        }
-
-                        path.addStep(
-                                new Node(newStep.getUrl().getUri(), newStep.getUrl().getStartLine())
-                        );
-                        currentNode = newStep.getId();
-                        break;
+                    var conditionalNodes = getConditions(newStep);
+                    for (var condition : conditionalNodes) {
+                        path.addConditionalNode(condition);
                     }
 
-                    lastEdgeChecked++;
+                    path.addStep(new Node(newStep.getUrl().getUri(), newStep.getUrl().getStartLine()));
+                    currentNode = newStep.getId();
+                    steps.add(currentNode);
+                } else {
+                    skippedTuple.add(edge);
                 }
 
-                level++;
-            } while (!Objects.equals(currentNode, endEl.getId()) && level <= result.getNodes().getTuples().size());
+                lastEdgeChecked++;
+            }
+
+            for (var edge :
+                    skippedTuple) {
+                if (steps.contains(edge.get(0).getId())) {
+                    TupleEl newStep = edge.get(1);
+
+                    var conditionalNodes = getConditions(newStep);
+                    for (var condition : conditionalNodes) {
+                        path.addConditionalNode(condition);
+                    }
+
+                    path.addSubStep(new Node(newStep.getUrl().getUri(), newStep.getUrl().getStartLine()));
+                    steps.add(newStep.getId());
+                }
+            }
+
+            while (lastEdgeChecked < edgeTuples.size()) {
+                var edge = edgeTuples.get(lastEdgeChecked);
+                if (steps.contains(edge.get(0).getId())) {
+                    TupleEl newStep = edge.get(1);
+
+                    var conditionalNodes = getConditions(newStep);
+                    for (var condition : conditionalNodes) {
+                        path.addConditionalNode(condition);
+                    }
+
+                    path.addSubStep(new Node(newStep.getUrl().getUri(), newStep.getUrl().getStartLine()));
+                    steps.add(newStep.getId());
+                }
+                lastEdgeChecked++;
+            }
 
             paths.add(path);
         }

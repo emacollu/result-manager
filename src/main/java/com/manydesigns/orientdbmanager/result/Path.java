@@ -15,12 +15,14 @@ import java.util.Objects;
  * Date: 15/04/22
  * Time: 17:31
  */
-@Getter @Setter
+@Getter
+@Setter
 public class Path {
 
     private Node start;
     private Node end;
     private LinkedList<Node> steps = new LinkedList<>();
+    private List<Node> subSteps = new ArrayList<>();
     private List<ConditionalNode> conditions = new ArrayList<>();
     private RestEndpoint restEndpoint;
 
@@ -33,9 +35,19 @@ public class Path {
         steps.addLast(node);
     }
 
+    public void addSubStep(Node node) {
+        for (var subStep : subSteps) {
+            if (Objects.equals(subStep.getFile(), node.getFile()) &&
+                    Objects.equals(subStep.getLine(), node.getLine())) {
+                return;
+            }
+        }
+        subSteps.add(node);
+    }
+
     public void addConditionalNode(ConditionalNode conditionalNode) {
         for (var condition : conditions) {
-            if(Objects.equals(condition.getFile(), conditionalNode.getFile()) &&
+            if (Objects.equals(condition.getFile(), conditionalNode.getFile()) &&
                     Objects.equals(condition.getLine(), conditionalNode.getLine())) {
                 return;
             }
@@ -49,6 +61,7 @@ public class Path {
                 "start=" + start +
                 ", end=" + end +
                 ", steps=" + steps +
+                ", subSteps=" + subSteps +
                 ", conditions=" + conditions +
                 ", restEndpoint=" + restEndpoint +
                 '}';
