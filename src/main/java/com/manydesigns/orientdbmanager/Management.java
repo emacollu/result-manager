@@ -89,32 +89,12 @@ public class Management {
 
             for (var edge :
                     skippedTuple) {
-                if (steps.contains(edge.get(0).getId())) {
-                    TupleEl newStep = edge.get(1);
-
-                    var conditionalNodes = getConditions(newStep);
-                    for (var condition : conditionalNodes) {
-                        path.addConditionalNode(condition);
-                    }
-
-                    path.addSubStep(new Node(newStep.getUrl().getUri(), newStep.getUrl().getStartLine()));
-                    steps.add(newStep.getId());
-                }
+                addSubPath(path, steps, edge);
             }
 
             while (lastEdgeChecked < edgeTuples.size()) {
                 var edge = edgeTuples.get(lastEdgeChecked);
-                if (steps.contains(edge.get(0).getId())) {
-                    TupleEl newStep = edge.get(1);
-
-                    var conditionalNodes = getConditions(newStep);
-                    for (var condition : conditionalNodes) {
-                        path.addConditionalNode(condition);
-                    }
-
-                    path.addSubStep(new Node(newStep.getUrl().getUri(), newStep.getUrl().getStartLine()));
-                    steps.add(newStep.getId());
-                }
+                addSubPath(path, steps, edge);
                 lastEdgeChecked++;
             }
 
@@ -184,6 +164,20 @@ public class Management {
         ObjectMapper objectMapper = new ObjectMapper();
         System.out.println(objectMapper.writeValueAsString(paths));
 
+    }
+
+    private static void addSubPath(Path path, List<Integer> steps, List<TupleEl> edge) {
+        if (steps.contains(edge.get(0).getId())) {
+            TupleEl newStep = edge.get(1);
+
+            var conditionalNodes = getConditions(newStep);
+            for (var condition : conditionalNodes) {
+                path.addConditionalNode(condition);
+            }
+
+            path.addSubStep(new Node(newStep.getUrl().getUri(), newStep.getUrl().getStartLine()));
+            steps.add(newStep.getId());
+        }
     }
 
     private static String getUrlFile(String className, List<List<TupleEl>> nodes) {
