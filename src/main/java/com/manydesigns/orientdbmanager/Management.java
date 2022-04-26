@@ -7,7 +7,9 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.body.VariableDeclarator;
+import com.github.javaparser.ast.expr.BinaryExpr;
 import com.github.javaparser.ast.expr.Expression;
+import com.github.javaparser.ast.expr.NameExpr;
 import com.github.javaparser.ast.stmt.IfStmt;
 import com.github.javaparser.ast.stmt.Statement;
 import com.github.javaparser.ast.stmt.SwitchStmt;
@@ -15,6 +17,7 @@ import com.github.javaparser.ast.stmt.WhileStmt;
 import com.manydesigns.orientdbmanager.frameworks.Parameter;
 import com.manydesigns.orientdbmanager.frameworks.SpringBoot;
 import com.manydesigns.orientdbmanager.models.TupleEl;
+import com.manydesigns.orientdbmanager.result.ConditionalExpression;
 import com.manydesigns.orientdbmanager.result.ConditionalNode;
 import com.manydesigns.orientdbmanager.result.Node;
 import com.manydesigns.orientdbmanager.result.Path;
@@ -250,7 +253,7 @@ public class Management {
                     result.add(new ConditionalNode(
                             node.getUrl().getUri(),
                             lineIf,
-                            condition.toString()
+                            new ConditionalExpression(condition)
                     ));
                 }
 
@@ -259,7 +262,7 @@ public class Management {
                     result.add(new ConditionalNode(
                             node.getUrl().getUri(),
                             lineIf,
-                            "!(" + condition.toString() + ")"
+                            new ConditionalExpression(condition, true)
                     ));
                 }
             }
@@ -282,7 +285,7 @@ public class Management {
                 result.add(new ConditionalNode(
                         node.getUrl().getUri(),
                         lineWhile,
-                        condition.toString()
+                        new ConditionalExpression(condition)
                 ));
             }
         }
@@ -306,10 +309,11 @@ public class Management {
                     for (var stmt :
                             entry.getStatements()) {
                         if (isInStmt(stmt, lineNode)) {
+                            var binaryExpr = new BinaryExpr(condition, new NameExpr(entry.getLabels().toString()), BinaryExpr.Operator.EQUALS);
                             result.add(new ConditionalNode(
                                     node.getUrl().getUri(),
                                     lineSwitch,
-                                    condition.toString() + " = " + entry.getLabels().toString()
+                                    new ConditionalExpression(binaryExpr)
                             ));
                         }
                     }
