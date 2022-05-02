@@ -4,6 +4,7 @@ import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.expr.SingleMemberAnnotationExpr;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.util.Locale;
 
@@ -12,8 +13,11 @@ import java.util.Locale;
  * Date: 19/04/22
  * Time: 16:57
  */
+@NoArgsConstructor
 @AllArgsConstructor
 public class SpringBoot implements Framework {
+
+    private Boolean findParameters = true;
 
     @Override
     public String pathController(ClassOrInterfaceDeclaration classDeclaration) {
@@ -54,16 +58,16 @@ public class SpringBoot implements Framework {
                 restEndpoint = new RestEndpoint(RestEndpoint.RestMethod.DELETE, "");
             }
 
-            if(restEndpoint != null) {
+            if (restEndpoint != null) {
                 if (ann instanceof SingleMemberAnnotationExpr) {
-                    restEndpoint.setPath(String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()));
+                    restEndpoint.setPath(String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()).replace("\"", ""));
                 }
 
                 break;
             }
         }
 
-        if (restEndpoint != null) {
+        if (restEndpoint != null && findParameters) {
             for (var param :
                     methodDeclaration.getParameters()) {
                 for (var ann :

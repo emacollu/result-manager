@@ -1,6 +1,7 @@
 package com.manydesigns.orientdbmanager;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.github.javaparser.Position;
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
@@ -23,6 +24,7 @@ import com.manydesigns.orientdbmanager.result.Node;
 import com.manydesigns.orientdbmanager.result.Path;
 import com.manydesigns.orientdbmanager.utils.Utils;
 import lombok.extern.slf4j.Slf4j;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,6 +33,7 @@ import java.net.URISyntaxException;
 import java.util.*;
 
 import static com.manydesigns.orientdbmanager.Constants.JSON_RESULT;
+import static com.manydesigns.orientdbmanager.Constants.OPENAPI;
 
 /**
  * Author: Emanuele Collura
@@ -43,10 +46,14 @@ public class Management {
     private static final int INDEX_END_SELECT = 2;
     private static final int INDEX_START_SELECT = 1;
     private static final Map<String, CompilationUnit> parsedFiles = new HashMap<>();
+    private static Map openAPI = null;
 
     public static void main(String[] args) throws IOException, URISyntaxException {
         assert JSON_RESULT != null;
         var result = Utils.readResult(JSON_RESULT);
+
+        if (openAPI == null && OPENAPI != null)
+            openAPI = Utils.readOpenAPI(OPENAPI);
 
         List<Path> paths = new ArrayList<>();
 
@@ -104,7 +111,8 @@ public class Management {
             paths.add(path);
         }
 
-        var springBoot = new SpringBoot();
+        boolean hasOpenAPI = openAPI != null;
+        var springBoot = new SpringBoot(hasOpenAPI);
 
         for (var path :
                 paths) {
@@ -136,27 +144,76 @@ public class Management {
             if (rootPath != null)
                 restEndpoint.setRootPath(rootPath);
 
-            for (var parameter : restEndpoint.getParameters()) {
-                if (!Objects.equals(parameter.getFormat(), Parameter.DEFAULT_FORMAT)) {
-                    var urlClass = getUrlFile(parameter.getFormat(), result.getNodes().getTuples());
-                    if (urlClass != null) {
-                        var formatClass = getParsedFile(urlClass);
-                        ClassOrInterfaceDeclaration declaration = null;
-                        for (var candidateClass :
-                                formatClass.findAll(ClassOrInterfaceDeclaration.class)) {
-                            if (candidateClass.getName().asString().equalsIgnoreCase(parameter.getFormat())) {
-                                declaration = candidateClass;
-                                break;
+            if (hasOpenAPI) {
+                var endpoint = (restEndpoint.getRootPath() + restEndpoint.getPath()).replace("\\", "/");
+                if (endpoint.endsWith("/"))
+                    endpoint = endpoint.substring(0, endpoint.length() - 1);
+                if (!endpoint.startsWith("/"))
+                    endpoint = "/" + endpoint;
+
+                var endpointOpenAPI = (Map) ((Map) ((Map) openAPI.get("paths")).get(endpoint)).get(restEndpoint.getMethod().name().toLowerCase(Locale.ROOT));
+                List<Parameter> parameters = new ArrayList<>();
+
+                var paramsOpenApi = (List<Map>) endpointOpenAPI.get("parameters");
+                if (paramsOpenApi != null && !paramsOpenApi.isEmpty())
+                    for (var param :
+                            paramsOpenApi) {
+                        parameters.add(new Parameter(
+                                Parameter.TypeParameter.getTypeFromMimeType((String) param.get("in")),
+                                (String) param.get("name"),
+                                (String) ((Map) param.get("schema")).get("type")
+                        ));
+                    }
+
+                var bodyOpenApi = (Map) endpointOpenAPI.get("requestBody");
+                if (bodyOpenApi != null)
+                    for (Map.Entry param :
+                            ((Set<Map.Entry>) ((Map) bodyOpenApi.get("content")).entrySet())) {
+                        var type = (String) param.getKey();
+                        var schema = (Map) ((Map) param.getValue()).get("schema");
+                        if (schema != null) {
+                            var ref = ((String) schema.get("$ref")).substring(2);
+                            var refSplit = ref.split("/");
+                            Map objSchema = openAPI;
+
+                            for (var key :
+                                    refSplit) {
+                                objSchema = (Map) objSchema.get(key);
                             }
+
+                            parameters.add(new Parameter(
+                                    Parameter.TypeParameter.getTypeFromMimeType(type),
+                                    null,
+                                    Utils.toJSON(objSchema)
+                            ));
                         }
-                        assert declaration != null;
-                        List<String> format = new ArrayList<>();
-                        for (var field :
-                                declaration.getFields()) {
-                            VariableDeclarator variable = field.getVariable(0);
-                            format.add("\":{\"key\":" + variable.getNameAsString() + ", \"type\":" + variable.getTypeAsString() + "\"}");
+                    }
+
+                restEndpoint.setParameters(parameters);
+            } else {
+                for (var parameter : restEndpoint.getParameters()) {
+                    if (!Objects.equals(parameter.getFormat(), Parameter.DEFAULT_FORMAT)) {
+
+                        var urlClass = getUrlFile(parameter.getFormat(), result.getNodes().getTuples());
+                        if (urlClass != null) {
+                            var formatClass = getParsedFile(urlClass);
+                            ClassOrInterfaceDeclaration declaration = null;
+                            for (var candidateClass :
+                                    formatClass.findAll(ClassOrInterfaceDeclaration.class)) {
+                                if (candidateClass.getName().asString().equalsIgnoreCase(parameter.getFormat())) {
+                                    declaration = candidateClass;
+                                    break;
+                                }
+                            }
+                            assert declaration != null;
+                            List<String> format = new ArrayList<>();
+                            for (var field :
+                                    declaration.getFields()) {
+                                VariableDeclarator variable = field.getVariable(0);
+                                format.add("\":{\"key\":" + variable.getNameAsString() + ", \"type\":" + variable.getTypeAsString() + "\"}");
+                            }
+                            parameter.setFormat("[" + String.join(",", format) + "]");
                         }
-                        parameter.setFormat("[" + String.join(",", format) + "]");
                     }
                 }
             }
@@ -164,8 +221,7 @@ public class Management {
             path.setRestEndpoint(restEndpoint);
         }
 
-        ObjectMapper objectMapper = new ObjectMapper();
-        System.out.println(objectMapper.writeValueAsString(paths));
+        System.out.println(Utils.toJSON(paths));
 
     }
 

@@ -16,6 +16,7 @@ public class Constants {
     public static final String PW_DB = "rootpwd";
 
     public static final URL JSON_RESULT = SetupDB.class.getClassLoader().getResource("results_analysis_com_inj.json");
+    public static final URL OPENAPI = SetupDB.class.getClassLoader().getResource("openapi.yaml");
     public static final String NODE_KEY = "Node";
     public static final String CONDITIONAL_NODE_KEY = "ConditionalNode";
     public static final String EDGE_KEY = "Edge";

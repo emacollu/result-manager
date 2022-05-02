@@ -9,7 +9,9 @@ import lombok.Setter;
  * Date: 19/04/22
  * Time: 16:53
  */
-@Getter @Setter @AllArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
 public class Parameter {
 
     private TypeParameter typeParameter;
@@ -18,10 +20,18 @@ public class Parameter {
 
     public static final String DEFAULT_FORMAT = "STRING";
 
-    enum TypeParameter {
+    public enum TypeParameter {
         QUERY_PARAM,
         PATH_PARAM,
-        JSON_BODY
+        JSON_BODY;
+
+        public static TypeParameter getTypeFromMimeType(String mimeType) {
+            if (mimeType.equals("application/json"))
+                return JSON_BODY;
+            if (mimeType.equals("query"))
+                return QUERY_PARAM;
+            return null;
+        }
     }
 
     @Override
