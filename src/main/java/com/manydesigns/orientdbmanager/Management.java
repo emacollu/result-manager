@@ -54,14 +54,21 @@ public class Management {
 
         List<Path> paths = new ArrayList<>();
 
+
         for (var tuple :
                 result.getSelect().getTuples()) {
             TupleEl startEl = tuple.get(INDEX_START_SELECT);
             TupleEl endEl = tuple.get(INDEX_END_SELECT);
 
+            var nameCmdVar = "";
+            var varSplit = startEl.getLabel().split(":");
+            if (varSplit.length > 0)
+                nameCmdVar = varSplit[0].trim();
+
             var path = new Path(
                     new Node(startEl.getUrl().getUri(), startEl.getUrl().getStartLine()),
-                    new Node(endEl.getUrl().getUri(), endEl.getUrl().getStartLine())
+                    new Node(endEl.getUrl().getUri(), endEl.getUrl().getStartLine()),
+                    nameCmdVar
             );
 
             path.addStep(
@@ -74,7 +81,8 @@ public class Management {
             var lastEdgeChecked = 0;
             var edgeTuples = result.getEdges().getTuples();
             List<List<TupleEl>> skippedTuple = new ArrayList<>();
-            while (!Objects.equals(currentNode, endEl.getId()) && lastEdgeChecked < edgeTuples.size()) {
+            var revert = false;
+            while (!Objects.equals(currentNode, endEl.getId())) {
                 var edge = edgeTuples.get(lastEdgeChecked);
                 if (edge.get(0).getId().equals(currentNode)) {
                     TupleEl newStep = edge.get(1);
@@ -90,22 +98,20 @@ public class Management {
                     ));
                     currentNode = newStep.getId();
                     steps.add(currentNode);
-                } else {
-                    skippedTuple.add(edge);
                 }
 
-                lastEdgeChecked++;
+                if (lastEdgeChecked == (edgeTuples.size() - 1) || revert && lastEdgeChecked == 0)
+                    revert = !revert;
+
+                if (revert)
+                    lastEdgeChecked--;
+                else
+                    lastEdgeChecked++;
             }
 
             for (var edge :
-                    skippedTuple) {
+                    edgeTuples) {
                 addSubPath(path, steps, edge);
-            }
-
-            while (lastEdgeChecked < edgeTuples.size()) {
-                var edge = edgeTuples.get(lastEdgeChecked);
-                addSubPath(path, steps, edge);
-                lastEdgeChecked++;
             }
 
             paths.add(path);
@@ -226,7 +232,7 @@ public class Management {
     }
 
     private static void addSubPath(Path path, List<Integer> steps, List<TupleEl> edge) {
-        if (steps.contains(edge.get(0).getId())) {
+        if (steps.contains(edge.get(0).getId()) && !steps.contains(edge.get(1).getId())) {
             TupleEl newStep = edge.get(1);
 
             var conditionalNodes = getConditions(newStep);

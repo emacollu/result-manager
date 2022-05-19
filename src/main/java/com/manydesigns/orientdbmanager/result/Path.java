@@ -21,14 +21,16 @@ public class Path {
 
     private Node start;
     private Node end;
+    private String nameCmdVar;
     private LinkedList<Node> steps = new LinkedList<>();
     private List<Node> subSteps = new ArrayList<>();
     private List<ConditionalNode> conditions = new ArrayList<>();
     private RestEndpoint restEndpoint;
 
-    public Path(Node start, Node end) {
+    public Path(Node start, Node end, String nameCmdVar) {
         this.start = start;
         this.end = end;
+        this.nameCmdVar = nameCmdVar;
     }
 
     public void addStep(Node node) {
