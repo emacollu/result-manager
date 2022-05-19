@@ -91,7 +91,7 @@ public class SpringBoot implements Framework {
                                 )
                         );
                     }
-                    if (nameAnnotation.equals("PATHPARAM")) {
+                    if (nameAnnotation.equals("PATHVARIABLE")) {
                         restEndpoint.addParameter(
                                 new Parameter(
                                         Parameter.TypeParameter.PATH_PARAM,

@@ -1,7 +1,5 @@
 package com.manydesigns.orientdbmanager;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.github.javaparser.Position;
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
@@ -24,7 +22,6 @@ import com.manydesigns.orientdbmanager.result.Node;
 import com.manydesigns.orientdbmanager.result.Path;
 import com.manydesigns.orientdbmanager.utils.Utils;
 import lombok.extern.slf4j.Slf4j;
-import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -87,7 +84,10 @@ public class Management {
                         path.addConditionalNode(condition);
                     }
 
-                    path.addStep(new Node(newStep.getUrl().getUri(), newStep.getUrl().getStartLine()));
+                    path.addStep(new Node(
+                            newStep.getUrl().getUri(),
+                            newStep.getUrl().getStartLine()
+                    ));
                     currentNode = newStep.getId();
                     steps.add(currentNode);
                 } else {

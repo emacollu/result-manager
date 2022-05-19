@@ -3,22 +3,22 @@ info:
   title: OpenAPI definition
   version: v0
 servers:
-- url: http://localhost:8080
-  description: Generated server url
+  - url: http://localhost:8080
+    description: Generated server url
 paths:
   /:
     get:
       tags:
-      - command-controller
+        - command-controller
       operationId: execCommand
       parameters:
-      - name: command
-        in: query
-        required: false
-        schema:
-          type: string
+        - name: command
+          in: query
+          required: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           description: OK
           content:
             '*/*':
@@ -26,7 +26,7 @@ paths:
                 type: string
     post:
       tags:
-      - command-controller
+        - command-controller
       operationId: execCommandPost
       requestBody:
         content:
@@ -35,7 +35,25 @@ paths:
               $ref: '#/components/schemas/Command'
         required: true
       responses:
-        "200":
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /{command}:
+    get:
+      tags:
+        - command-controller
+      operationId: execCommandPath
+      parameters:
+        - name: command
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
           description: OK
           content:
             '*/*':
@@ -44,16 +62,16 @@ paths:
   /thread:
     get:
       tags:
-      - command-controller
+        - command-controller
       operationId: execCommandThread
       parameters:
-      - name: command
-        in: query
-        required: false
-        schema:
-          type: string
+        - name: command
+          in: query
+          required: false
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           description: OK
           content:
             '*/*':
@@ -62,16 +80,16 @@ paths:
   /sanity:
     get:
       tags:
-      - command-controller
+        - command-controller
       operationId: execCommandSanity
       parameters:
-      - name: command
-        in: query
-        required: true
-        schema:
-          type: string
+        - name: command
+          in: query
+          required: true
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           description: OK
           content:
             '*/*':
@@ -80,16 +98,16 @@ paths:
   /pb:
     get:
       tags:
-      - command-controller
+        - command-controller
       operationId: execCommandPB
       parameters:
-      - name: command
-        in: query
-        required: true
-        schema:
-          type: string
+        - name: command
+          in: query
+          required: true
+          schema:
+            type: string
       responses:
-        "200":
+        '200':
           description: OK
           content:
             '*/*':

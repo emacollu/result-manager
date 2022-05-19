@@ -30,6 +30,8 @@ public class Parameter {
                 return JSON_BODY;
             if (mimeType.equals("query"))
                 return QUERY_PARAM;
+            if (mimeType.equals("path"))
+                return PATH_PARAM;
             return null;
         }
     }

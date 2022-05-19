@@ -17,21 +17,21 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 30,
-            "startColumn": 47,
-            "endLine": 30,
-            "endColumn": 95
+            "startLine": 35,
+            "startColumn": 51,
+            "endLine": 35,
+            "endColumn": 89
           }
         },
         {
-          "id": 4,
+          "id": 5,
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 33,
-            "startColumn": 49,
-            "endLine": 33,
-            "endColumn": 55
+            "startLine": 36,
+            "startColumn": 28,
+            "endLine": 36,
+            "endColumn": 34
           }
         }
       ],
@@ -41,34 +41,10 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 44,
-            "startColumn": 49,
-            "endLine": 44,
-            "endColumn": 87
-          }
-        },
-        {
-          "id": 5,
-          "label": "command : String",
-          "url": {
-            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 48,
-            "startColumn": 64,
-            "endLine": 48,
-            "endColumn": 70
-          }
-        }
-      ],
-      [
-        {
-          "id": 2,
-          "label": "command : String",
-          "url": {
-            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 62,
-            "startColumn": 53,
-            "endLine": 62,
-            "endColumn": 101
+            "startLine": 40,
+            "startColumn": 47,
+            "endLine": 40,
+            "endColumn": 95
           }
         },
         {
@@ -76,10 +52,10 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 63,
-            "startColumn": 42,
-            "endLine": 63,
-            "endColumn": 48
+            "startLine": 43,
+            "startColumn": 49,
+            "endLine": 43,
+            "endColumn": 55
           }
         }
       ],
@@ -89,10 +65,10 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 62,
-            "startColumn": 53,
-            "endLine": 62,
-            "endColumn": 101
+            "startLine": 54,
+            "startColumn": 49,
+            "endLine": 54,
+            "endColumn": 87
           }
         },
         {
@@ -100,22 +76,22 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 64,
-            "startColumn": 13,
-            "endLine": 64,
-            "endColumn": 19
+            "startLine": 58,
+            "startColumn": 64,
+            "endLine": 58,
+            "endColumn": 70
           }
         }
       ],
       [
         {
-          "id": 2,
+          "id": 3,
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 62,
+            "startLine": 72,
             "startColumn": 53,
-            "endLine": 62,
+            "endLine": 72,
             "endColumn": 101
           }
         },
@@ -124,82 +100,106 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 64,
-            "startColumn": 32,
-            "endLine": 64,
-            "endColumn": 38
+            "startLine": 73,
+            "startColumn": 42,
+            "endLine": 73,
+            "endColumn": 48
           }
         }
       ],
       [
         {
           "id": 3,
-          "label": "command : Command",
+          "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 79,
-            "startColumn": 51,
-            "endLine": 79,
-            "endColumn": 78
+            "startLine": 72,
+            "startColumn": 53,
+            "endLine": 72,
+            "endColumn": 101
           }
         },
         {
           "id": 9,
-          "label": "getValue(...) : String",
+          "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 81,
-            "startColumn": 45,
-            "endLine": 81,
-            "endColumn": 62
+            "startLine": 74,
+            "startColumn": 13,
+            "endLine": 74,
+            "endColumn": 19
           }
         }
       ],
       [
         {
           "id": 3,
-          "label": "command : Command",
+          "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 79,
-            "startColumn": 51,
-            "endLine": 79,
-            "endColumn": 78
+            "startLine": 72,
+            "startColumn": 53,
+            "endLine": 72,
+            "endColumn": 101
           }
         },
         {
           "id": 10,
-          "label": "command : Command",
+          "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 81,
-            "startColumn": 45,
-            "endLine": 81,
-            "endColumn": 51
+            "startLine": 74,
+            "startColumn": 32,
+            "endLine": 74,
+            "endColumn": 38
           }
         }
       ],
       [
         {
           "id": 4,
-          "label": "command : String",
+          "label": "command : Command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 33,
-            "startColumn": 49,
-            "endLine": 33,
-            "endColumn": 55
+            "startLine": 89,
+            "startColumn": 51,
+            "endLine": 89,
+            "endColumn": 78
           }
         },
         {
-          "id": 14,
-          "label": "command : String",
+          "id": 11,
+          "label": "getValue(...) : String",
           "url": {
-            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
-            "startLine": 16,
-            "startColumn": 39,
-            "endLine": 16,
-            "endColumn": 52
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 91,
+            "startColumn": 45,
+            "endLine": 91,
+            "endColumn": 62
+          }
+        }
+      ],
+      [
+        {
+          "id": 4,
+          "label": "command : Command",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 89,
+            "startColumn": 51,
+            "endLine": 89,
+            "endColumn": 78
+          }
+        },
+        {
+          "id": 12,
+          "label": "command : Command",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 91,
+            "startColumn": 45,
+            "endLine": 91,
+            "endColumn": 51
           }
         }
       ],
@@ -209,21 +209,21 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 48,
-            "startColumn": 64,
-            "endLine": 48,
-            "endColumn": 70
+            "startLine": 36,
+            "startColumn": 28,
+            "endLine": 36,
+            "endColumn": 34
           }
         },
         {
-          "id": 19,
-          "label": "split(...)",
+          "id": 16,
+          "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 48,
-            "startColumn": 64,
-            "endLine": 48,
-            "endColumn": 81
+            "startLine": 40,
+            "startColumn": 47,
+            "endLine": 40,
+            "endColumn": 95
           }
         }
       ],
@@ -233,21 +233,21 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 63,
-            "startColumn": 42,
-            "endLine": 63,
-            "endColumn": 48
+            "startLine": 43,
+            "startColumn": 49,
+            "endLine": 43,
+            "endColumn": 55
           }
         },
         {
-          "id": 11,
+          "id": 17,
           "label": "command : String",
           "url": {
-            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 68,
-            "startColumn": 53,
-            "endLine": 68,
-            "endColumn": 59
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
+            "startLine": 16,
+            "startColumn": 39,
+            "endLine": 16,
+            "endColumn": 52
           }
         }
       ],
@@ -257,21 +257,21 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 64,
-            "startColumn": 13,
-            "endLine": 64,
-            "endColumn": 19
+            "startLine": 58,
+            "startColumn": 64,
+            "endLine": 58,
+            "endColumn": 70
           }
         },
         {
-          "id": 11,
-          "label": "command : String",
+          "id": 23,
+          "label": "split(...)",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 68,
-            "startColumn": 53,
-            "endLine": 68,
-            "endColumn": 59
+            "startLine": 58,
+            "startColumn": 64,
+            "endLine": 58,
+            "endColumn": 81
           }
         }
       ],
@@ -281,110 +281,86 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 64,
+            "startLine": 73,
+            "startColumn": 42,
+            "endLine": 73,
+            "endColumn": 48
+          }
+        },
+        {
+          "id": 13,
+          "label": "command : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 78,
+            "startColumn": 53,
+            "endLine": 78,
+            "endColumn": 59
+          }
+        }
+      ],
+      [
+        {
+          "id": 9,
+          "label": "command : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 74,
+            "startColumn": 13,
+            "endLine": 74,
+            "endColumn": 19
+          }
+        },
+        {
+          "id": 13,
+          "label": "command : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 78,
+            "startColumn": 53,
+            "endLine": 78,
+            "endColumn": 59
+          }
+        }
+      ],
+      [
+        {
+          "id": 10,
+          "label": "command : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 74,
             "startColumn": 32,
-            "endLine": 64,
+            "endLine": 74,
             "endColumn": 38
           }
         },
         {
-          "id": 11,
+          "id": 13,
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 68,
+            "startLine": 78,
             "startColumn": 53,
-            "endLine": 68,
+            "endLine": 78,
             "endColumn": 59
           }
         }
       ],
       [
         {
-          "id": 9,
-          "label": "getValue(...) : String",
-          "url": {
-            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 81,
-            "startColumn": 45,
-            "endLine": 81,
-            "endColumn": 62
-          }
-        },
-        {
-          "id": 14,
-          "label": "command : String",
-          "url": {
-            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
-            "startLine": 16,
-            "startColumn": 39,
-            "endLine": 16,
-            "endColumn": 52
-          }
-        }
-      ],
-      [
-        {
-          "id": 10,
-          "label": "command : Command",
-          "url": {
-            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 81,
-            "startColumn": 45,
-            "endLine": 81,
-            "endColumn": 51
-          }
-        },
-        {
-          "id": 9,
-          "label": "getValue(...) : String",
-          "url": {
-            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 81,
-            "startColumn": 45,
-            "endLine": 81,
-            "endColumn": 62
-          }
-        }
-      ],
-      [
-        {
-          "id": 10,
-          "label": "command : Command",
-          "url": {
-            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 81,
-            "startColumn": 45,
-            "endLine": 81,
-            "endColumn": 51
-          }
-        },
-        {
-          "id": 12,
-          "label": "parameter this : Command",
-          "url": {
-            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/Command.java",
-            "startLine": 18,
-            "startColumn": 19,
-            "endLine": 18,
-            "endColumn": 26
-          }
-        }
-      ],
-      [
-        {
           "id": 11,
-          "label": "command : String",
+          "label": "getValue(...) : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 68,
-            "startColumn": 53,
-            "endLine": 68,
-            "endColumn": 59
+            "startLine": 91,
+            "startColumn": 45,
+            "endLine": 91,
+            "endColumn": 62
           }
         },
         {
-          "id": 14,
+          "id": 17,
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
@@ -398,6 +374,78 @@
       [
         {
           "id": 12,
+          "label": "command : Command",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 91,
+            "startColumn": 45,
+            "endLine": 91,
+            "endColumn": 51
+          }
+        },
+        {
+          "id": 11,
+          "label": "getValue(...) : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 91,
+            "startColumn": 45,
+            "endLine": 91,
+            "endColumn": 62
+          }
+        }
+      ],
+      [
+        {
+          "id": 12,
+          "label": "command : Command",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 91,
+            "startColumn": 45,
+            "endLine": 91,
+            "endColumn": 51
+          }
+        },
+        {
+          "id": 14,
+          "label": "parameter this : Command",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/Command.java",
+            "startLine": 18,
+            "startColumn": 19,
+            "endLine": 18,
+            "endColumn": 26
+          }
+        }
+      ],
+      [
+        {
+          "id": 13,
+          "label": "command : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 78,
+            "startColumn": 53,
+            "endLine": 78,
+            "endColumn": 59
+          }
+        },
+        {
+          "id": 17,
+          "label": "command : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
+            "startLine": 16,
+            "startColumn": 39,
+            "endLine": 16,
+            "endColumn": 52
+          }
+        }
+      ],
+      [
+        {
+          "id": 14,
           "label": "parameter this : Command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/Command.java",
@@ -408,7 +456,7 @@
           }
         },
         {
-          "id": 15,
+          "id": 18,
           "label": "this.value : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/Command.java",
@@ -421,7 +469,31 @@
       ],
       [
         {
-          "id": 14,
+          "id": 16,
+          "label": "command : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 40,
+            "startColumn": 47,
+            "endLine": 40,
+            "endColumn": 95
+          }
+        },
+        {
+          "id": 19,
+          "label": "command : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 43,
+            "startColumn": 49,
+            "endLine": 43,
+            "endColumn": 55
+          }
+        }
+      ],
+      [
+        {
+          "id": 17,
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
@@ -432,7 +504,7 @@
           }
         },
         {
-          "id": 20,
+          "id": 24,
           "label": "command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
@@ -440,6 +512,30 @@
             "startColumn": 51,
             "endLine": 18,
             "endColumn": 57
+          }
+        }
+      ],
+      [
+        {
+          "id": 19,
+          "label": "command : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 43,
+            "startColumn": 49,
+            "endLine": 43,
+            "endColumn": 55
+          }
+        },
+        {
+          "id": 17,
+          "label": "command : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
+            "startLine": 16,
+            "startColumn": 39,
+            "endLine": 16,
+            "endColumn": 52
           }
         }
       ]
@@ -467,10 +563,10 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 30,
-            "startColumn": 47,
-            "endLine": 30,
-            "endColumn": 95
+            "startLine": 35,
+            "startColumn": 51,
+            "endLine": 35,
+            "endColumn": 89
           }
         },
         "semmle.label",
@@ -482,10 +578,10 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 44,
-            "startColumn": 49,
-            "endLine": 44,
-            "endColumn": 87
+            "startLine": 40,
+            "startColumn": 47,
+            "endLine": 40,
+            "endColumn": 95
           }
         },
         "semmle.label",
@@ -497,10 +593,10 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 62,
-            "startColumn": 53,
-            "endLine": 62,
-            "endColumn": 101
+            "startLine": 54,
+            "startColumn": 49,
+            "endLine": 54,
+            "endColumn": 87
           }
         },
         "semmle.label",
@@ -509,12 +605,27 @@
       [
         {
           "id": 3,
+          "label": "command : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 72,
+            "startColumn": 53,
+            "endLine": 72,
+            "endColumn": 101
+          }
+        },
+        "semmle.label",
+        "command : String"
+      ],
+      [
+        {
+          "id": 4,
           "label": "command : Command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 79,
+            "startLine": 89,
             "startColumn": 51,
-            "endLine": 79,
+            "endLine": 89,
             "endColumn": 78
           }
         },
@@ -523,29 +634,14 @@
       ],
       [
         {
-          "id": 4,
-          "label": "command : String",
-          "url": {
-            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 33,
-            "startColumn": 49,
-            "endLine": 33,
-            "endColumn": 55
-          }
-        },
-        "semmle.label",
-        "command : String"
-      ],
-      [
-        {
           "id": 5,
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 48,
-            "startColumn": 64,
-            "endLine": 48,
-            "endColumn": 70
+            "startLine": 36,
+            "startColumn": 28,
+            "endLine": 36,
+            "endColumn": 34
           }
         },
         "semmle.label",
@@ -557,10 +653,10 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 63,
-            "startColumn": 42,
-            "endLine": 63,
-            "endColumn": 48
+            "startLine": 43,
+            "startColumn": 49,
+            "endLine": 43,
+            "endColumn": 55
           }
         },
         "semmle.label",
@@ -572,10 +668,10 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 64,
-            "startColumn": 13,
-            "endLine": 64,
-            "endColumn": 19
+            "startLine": 58,
+            "startColumn": 64,
+            "endLine": 58,
+            "endColumn": 70
           }
         },
         "semmle.label",
@@ -587,10 +683,10 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 64,
-            "startColumn": 32,
-            "endLine": 64,
-            "endColumn": 38
+            "startLine": 73,
+            "startColumn": 42,
+            "endLine": 73,
+            "endColumn": 48
           }
         },
         "semmle.label",
@@ -599,12 +695,42 @@
       [
         {
           "id": 9,
+          "label": "command : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 74,
+            "startColumn": 13,
+            "endLine": 74,
+            "endColumn": 19
+          }
+        },
+        "semmle.label",
+        "command : String"
+      ],
+      [
+        {
+          "id": 10,
+          "label": "command : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 74,
+            "startColumn": 32,
+            "endLine": 74,
+            "endColumn": 38
+          }
+        },
+        "semmle.label",
+        "command : String"
+      ],
+      [
+        {
+          "id": 11,
           "label": "getValue(...) : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 81,
+            "startLine": 91,
             "startColumn": 45,
-            "endLine": 81,
+            "endLine": 91,
             "endColumn": 62
           }
         },
@@ -613,13 +739,13 @@
       ],
       [
         {
-          "id": 10,
+          "id": 12,
           "label": "command : Command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 81,
+            "startLine": 91,
             "startColumn": 45,
-            "endLine": 81,
+            "endLine": 91,
             "endColumn": 51
           }
         },
@@ -628,13 +754,13 @@
       ],
       [
         {
-          "id": 11,
+          "id": 13,
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 68,
+            "startLine": 78,
             "startColumn": 53,
-            "endLine": 68,
+            "endLine": 78,
             "endColumn": 59
           }
         },
@@ -643,7 +769,7 @@
       ],
       [
         {
-          "id": 12,
+          "id": 14,
           "label": "parameter this : Command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/Command.java",
@@ -658,7 +784,22 @@
       ],
       [
         {
-          "id": 14,
+          "id": 16,
+          "label": "command : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 40,
+            "startColumn": 47,
+            "endLine": 40,
+            "endColumn": 95
+          }
+        },
+        "semmle.label",
+        "command : String"
+      ],
+      [
+        {
+          "id": 17,
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
@@ -673,7 +814,7 @@
       ],
       [
         {
-          "id": 15,
+          "id": 18,
           "label": "this.value : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/Command.java",
@@ -689,12 +830,27 @@
       [
         {
           "id": 19,
+          "label": "command : String",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 43,
+            "startColumn": 49,
+            "endLine": 43,
+            "endColumn": 55
+          }
+        },
+        "semmle.label",
+        "command : String"
+      ],
+      [
+        {
+          "id": 23,
           "label": "split(...)",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 48,
+            "startLine": 58,
             "startColumn": 64,
-            "endLine": 48,
+            "endLine": 58,
             "endColumn": 81
           }
         },
@@ -703,7 +859,7 @@
       ],
       [
         {
-          "id": 20,
+          "id": 24,
           "label": "command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
@@ -740,18 +896,18 @@
     "tuples": [
       [
         {
-          "id": 10,
+          "id": 12,
           "label": "command : Command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 81,
+            "startLine": 91,
             "startColumn": 45,
-            "endLine": 81,
+            "endLine": 91,
             "endColumn": 51
           }
         },
         {
-          "id": 12,
+          "id": 14,
           "label": "parameter this : Command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/Command.java",
@@ -762,7 +918,7 @@
           }
         },
         {
-          "id": 15,
+          "id": 18,
           "label": "this.value : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/Command.java",
@@ -773,13 +929,13 @@
           }
         },
         {
-          "id": 9,
+          "id": 11,
           "label": "getValue(...) : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 81,
+            "startLine": 91,
             "startColumn": 45,
-            "endLine": 81,
+            "endLine": 91,
             "endColumn": 62
           }
         }
@@ -813,47 +969,47 @@
     "tuples": [
       [
         {
-          "id": 830,
+          "id": 899,
           "label": "split(...)",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 48,
+            "startLine": 58,
             "startColumn": 64,
-            "endLine": 48,
+            "endLine": 58,
             "endColumn": 81
           }
         },
         {
-          "id": 1,
+          "id": 2,
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 44,
+            "startLine": 54,
             "startColumn": 49,
-            "endLine": 44,
+            "endLine": 54,
             "endColumn": 87
           }
         },
         {
-          "id": 19,
+          "id": 23,
           "label": "split(...)",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 48,
+            "startLine": 58,
             "startColumn": 64,
-            "endLine": 48,
+            "endLine": 58,
             "endColumn": 81
           }
         },
         "$@ flows to here and is used in a command.",
         {
-          "id": 5487,
+          "id": 5497,
           "label": "command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 44,
+            "startLine": 54,
             "startColumn": 49,
-            "endLine": 44,
+            "endLine": 54,
             "endColumn": 87
           }
         },
@@ -861,7 +1017,7 @@
       ],
       [
         {
-          "id": 1603,
+          "id": 1672,
           "label": "command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
@@ -876,14 +1032,14 @@
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 30,
-            "startColumn": 47,
-            "endLine": 30,
-            "endColumn": 95
+            "startLine": 35,
+            "startColumn": 51,
+            "endLine": 35,
+            "endColumn": 89
           }
         },
         {
-          "id": 20,
+          "id": 24,
           "label": "command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
@@ -895,21 +1051,21 @@
         },
         "$@ flows to here and is used in a command.",
         {
-          "id": 5469,
+          "id": 5478,
           "label": "command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 30,
-            "startColumn": 47,
-            "endLine": 30,
-            "endColumn": 95
+            "startLine": 35,
+            "startColumn": 51,
+            "endLine": 35,
+            "endColumn": 89
           }
         },
         "User-provided value"
       ],
       [
         {
-          "id": 1603,
+          "id": 1672,
           "label": "command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
@@ -920,18 +1076,18 @@
           }
         },
         {
-          "id": 2,
+          "id": 1,
           "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 62,
-            "startColumn": 53,
-            "endLine": 62,
-            "endColumn": 101
+            "startLine": 40,
+            "startColumn": 47,
+            "endLine": 40,
+            "endColumn": 95
           }
         },
         {
-          "id": 20,
+          "id": 24,
           "label": "command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
@@ -943,21 +1099,21 @@
         },
         "$@ flows to here and is used in a command.",
         {
-          "id": 5488,
+          "id": 5479,
           "label": "command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 62,
-            "startColumn": 53,
-            "endLine": 62,
-            "endColumn": 101
+            "startLine": 40,
+            "startColumn": 47,
+            "endLine": 40,
+            "endColumn": 95
           }
         },
         "User-provided value"
       ],
       [
         {
-          "id": 1603,
+          "id": 1672,
           "label": "command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
@@ -969,17 +1125,17 @@
         },
         {
           "id": 3,
-          "label": "command : Command",
+          "label": "command : String",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 79,
-            "startColumn": 51,
-            "endLine": 79,
-            "endColumn": 78
+            "startLine": 72,
+            "startColumn": 53,
+            "endLine": 72,
+            "endColumn": 101
           }
         },
         {
-          "id": 20,
+          "id": 24,
           "label": "command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
@@ -991,13 +1147,61 @@
         },
         "$@ flows to here and is used in a command.",
         {
-          "id": 5489,
+          "id": 5498,
           "label": "command",
           "url": {
             "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
-            "startLine": 79,
+            "startLine": 72,
+            "startColumn": 53,
+            "endLine": 72,
+            "endColumn": 101
+          }
+        },
+        "User-provided value"
+      ],
+      [
+        {
+          "id": 1672,
+          "label": "command",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
+            "startLine": 18,
             "startColumn": 51,
-            "endLine": 79,
+            "endLine": 18,
+            "endColumn": 57
+          }
+        },
+        {
+          "id": 4,
+          "label": "command : Command",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 89,
+            "startColumn": 51,
+            "endLine": 89,
+            "endColumn": 78
+          }
+        },
+        {
+          "id": 24,
+          "label": "command",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/ExecCommand.java",
+            "startLine": 18,
+            "startColumn": 51,
+            "endLine": 18,
+            "endColumn": 57
+          }
+        },
+        "$@ flows to here and is used in a command.",
+        {
+          "id": 5499,
+          "label": "command",
+          "url": {
+            "uri": "file:/Users/emanuelecollura/progetti/javacommandinjection/codeql_source/src/main/java/com/manydesigns/javacommandinjection/CommandController.java",
+            "startLine": 89,
+            "startColumn": 51,
+            "endLine": 89,
             "endColumn": 78
           }
         },
