@@ -61,14 +61,18 @@ public class Management {
             TupleEl endEl = tuple.get(INDEX_END_SELECT);
 
             var nameCmdVar = "";
+            var typeCmdVar = "";
             var varSplit = startEl.getLabel().split(":");
             if (varSplit.length > 0)
                 nameCmdVar = varSplit[0].trim();
+            if (varSplit.length > 1)
+                typeCmdVar = varSplit[1].trim().toLowerCase(Locale.ROOT);
 
             var path = new Path(
                     new Node(startEl.getUrl().getUri(), startEl.getUrl().getStartLine()),
                     new Node(endEl.getUrl().getUri(), endEl.getUrl().getStartLine()),
-                    nameCmdVar
+                    nameCmdVar,
+                    typeCmdVar
             );
 
             path.addStep(
