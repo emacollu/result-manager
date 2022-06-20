@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import static com.manydesigns.orientdbmanager.Constants.COMMON_PATH;
 
 /**
  * Author: Emanuele Collura
@@ -22,7 +21,7 @@ public class Node {
     @Override
     public String toString() {
         return "Node{" +
-                "file='" + file.replace(COMMON_PATH, "") + '\'' +
+                "file='" + file + '\'' +
                 ", line=" + line +
                 '}';
     }
