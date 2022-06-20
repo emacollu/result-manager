@@ -13,8 +13,11 @@ import com.github.javaparser.ast.stmt.IfStmt;
 import com.github.javaparser.ast.stmt.Statement;
 import com.github.javaparser.ast.stmt.SwitchStmt;
 import com.github.javaparser.ast.stmt.WhileStmt;
+import com.manydesigns.orientdbmanager.frameworks.AcceptedFramework;
+import com.manydesigns.orientdbmanager.frameworks.Framework;
 import com.manydesigns.orientdbmanager.frameworks.Parameter;
-import com.manydesigns.orientdbmanager.frameworks.SpringBoot;
+import com.manydesigns.orientdbmanager.frameworks.implementation.JaxRS;
+import com.manydesigns.orientdbmanager.frameworks.implementation.SpringBoot;
 import com.manydesigns.orientdbmanager.models.TupleEl;
 import com.manydesigns.orientdbmanager.result.ConditionalExpression;
 import com.manydesigns.orientdbmanager.result.ConditionalNode;
@@ -27,10 +30,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.text.ParseException;
 import java.util.*;
-
-import static com.manydesigns.orientdbmanager.Constants.JSON_RESULT;
-import static com.manydesigns.orientdbmanager.Constants.OPENAPI;
 
 /**
  * Author: Emanuele Collura
@@ -38,19 +39,22 @@ import static com.manydesigns.orientdbmanager.Constants.OPENAPI;
  * Time: 17:21
  */
 @Slf4j
-public class Management {
+public class Manager {
 
     private static final int INDEX_END_SELECT = 2;
     private static final int INDEX_START_SELECT = 1;
     private static final Map<String, CompilationUnit> parsedFiles = new HashMap<>();
     private static Map openAPI = null;
 
-    public static void main(String[] args) throws IOException, URISyntaxException {
-        assert JSON_RESULT != null;
-        var result = Utils.readResult(JSON_RESULT);
+    public static void main(String[] args) throws Exception {
+        var managerArgs = MangerArgs.parse(args);
 
-        if (openAPI == null && OPENAPI != null)
-            openAPI = Utils.readOpenAPI(OPENAPI);
+        String jsonResultPath = managerArgs.getCommInjResult();
+        var result = Utils.readResult(jsonResultPath);
+
+        String openApiPath = managerArgs.getOpenApi();
+        if (openApiPath != null)
+            openAPI = Utils.readOpenAPI(openApiPath);
 
         List<Path> paths = new ArrayList<>();
 
@@ -84,7 +88,6 @@ public class Management {
             steps.add(currentNode);
             var lastEdgeChecked = 0;
             var edgeTuples = result.getEdges().getTuples();
-            List<List<TupleEl>> skippedTuple = new ArrayList<>();
             var revert = false;
             while (!Objects.equals(currentNode, endEl.getId())) {
                 var edge = edgeTuples.get(lastEdgeChecked);
@@ -122,7 +125,17 @@ public class Management {
         }
 
         boolean hasOpenAPI = openAPI != null;
-        var springBoot = new SpringBoot(hasOpenAPI);
+        Framework frameworkParser = null;
+        var frameworkSelected = managerArgs.getAcceptedFramework();
+
+        if (frameworkSelected.equals(AcceptedFramework.SPRING_BOOT)) {
+            frameworkParser = new SpringBoot(hasOpenAPI);
+        } else if (frameworkSelected.equals(AcceptedFramework.JAX_RS)) {
+            frameworkParser = new JaxRS();
+        } else {
+            throw new Exception("no framework found");
+        }
+
 
         for (var path :
                 paths) {
@@ -138,7 +151,7 @@ public class Management {
                 }
             }
             assert methodDeclaration != null;
-            var restEndpoint = springBoot.restMethod(methodDeclaration);
+            var restEndpoint = frameworkParser.restMethod(methodDeclaration);
 
             ClassOrInterfaceDeclaration classDeclaration = null;
             for (var cd :
@@ -150,7 +163,7 @@ public class Management {
             }
             assert classDeclaration != null;
 
-            var rootPath = springBoot.pathController(classDeclaration);
+            var rootPath = frameworkParser.pathController(classDeclaration);
             if (rootPath != null)
                 restEndpoint.setRootPath(rootPath);
 

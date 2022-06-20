@@ -21,14 +21,14 @@ public class Utils {
     private static final ObjectMapper JSON_MAPPER = new ObjectMapper();
     private static final ObjectMapper YAML_MAPPER = new ObjectMapper(new YAMLFactory());
 
-    public static Result readResult(URL jsonResult) throws IOException, URISyntaxException {
+    public static Result readResult(String jsonResult) throws IOException, URISyntaxException {
         //Read from file
-        return JSON_MAPPER.readValue(new File(jsonResult.toURI()), Result.class);
+        return JSON_MAPPER.readValue(new File(jsonResult), Result.class);
     }
 
-    public static Map readOpenAPI(URL openAPI) throws IOException, URISyntaxException {
+    public static Map readOpenAPI(String openAPI) throws IOException, URISyntaxException {
         //Read from file
-        return YAML_MAPPER.readValue(new File(openAPI.toURI()), Map.class);
+        return YAML_MAPPER.readValue(new File(openAPI), Map.class);
     }
 
     public static String toJSON(Object object) throws JsonProcessingException {

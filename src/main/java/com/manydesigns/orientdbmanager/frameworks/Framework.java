@@ -8,7 +8,7 @@ import com.github.javaparser.ast.body.MethodDeclaration;
  * Date: 19/04/22
  * Time: 16:44
  */
-interface Framework {
+public interface Framework {
 
     String pathController(ClassOrInterfaceDeclaration classDeclaration);
     RestEndpoint restMethod(MethodDeclaration methodDeclaration);

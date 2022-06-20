@@ -1,23 +1,20 @@
-package com.manydesigns.orientdbmanager.frameworks;
+package com.manydesigns.orientdbmanager.frameworks.implementation;
 
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.expr.SingleMemberAnnotationExpr;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import com.manydesigns.orientdbmanager.frameworks.Framework;
+import com.manydesigns.orientdbmanager.frameworks.Parameter;
+import com.manydesigns.orientdbmanager.frameworks.RestEndpoint;
 
 import java.util.Locale;
 
 /**
  * Author: Emanuele Collura
- * Date: 19/04/22
- * Time: 16:57
+ * Date: 20/04/22
+ * Time: 17:38
  */
-@NoArgsConstructor
-@AllArgsConstructor
-public class SpringBoot implements Framework {
-
-    private Boolean findParameters = true;
+public class JaxRS implements Framework {
 
     @Override
     public String pathController(ClassOrInterfaceDeclaration classDeclaration) {
@@ -25,7 +22,7 @@ public class SpringBoot implements Framework {
 
         for (var ann :
                 classDeclaration.getAnnotations()) {
-            if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("RESTCONTROLLER")) {
+            if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("PATH")) {
                 if (ann instanceof SingleMemberAnnotationExpr) {
                     path = String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue());
                 }
@@ -42,38 +39,38 @@ public class SpringBoot implements Framework {
 
         for (var ann :
                 methodDeclaration.getAnnotations()) {
-            if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("GETMAPPING")) {
+            if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("GET")) {
                 restEndpoint = new RestEndpoint(RestEndpoint.RestMethod.GET, "");
             }
 
-            if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("POSTMAPPING")) {
+            if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("POST")) {
                 restEndpoint = new RestEndpoint(RestEndpoint.RestMethod.POST, "");
             }
 
-            if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("PUTMAPPING")) {
+            if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("PUT")) {
                 restEndpoint = new RestEndpoint(RestEndpoint.RestMethod.PUT, "");
             }
 
-            if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("DELETEMAPPING")) {
+            if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("DELETE")) {
                 restEndpoint = new RestEndpoint(RestEndpoint.RestMethod.DELETE, "");
             }
 
-            if (restEndpoint != null) {
+            if(restEndpoint != null) {
                 if (ann instanceof SingleMemberAnnotationExpr) {
-                    restEndpoint.setPath(String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()).replace("\"", ""));
+                    restEndpoint.setPath(String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()));
                 }
 
                 break;
             }
         }
 
-        if (restEndpoint != null && findParameters) {
+        if (restEndpoint != null) {
             for (var param :
                     methodDeclaration.getParameters()) {
                 for (var ann :
                         param.getAnnotations()) {
                     String nameAnnotation = ann.getName().getIdentifier().toUpperCase(Locale.ROOT);
-                    if (nameAnnotation.equals("REQUESTPARAM")) {
+                    if (nameAnnotation.equals("QUERYPARAM")) {
                         restEndpoint.addParameter(
                                 new Parameter(
                                         Parameter.TypeParameter.QUERY_PARAM,
@@ -82,16 +79,7 @@ public class SpringBoot implements Framework {
                                 )
                         );
                     }
-                    if (nameAnnotation.equals("REQUESTBODY")) {
-                        restEndpoint.addParameter(
-                                new Parameter(
-                                        Parameter.TypeParameter.JSON_BODY,
-                                        null,
-                                        param.getType().asString()
-                                )
-                        );
-                    }
-                    if (nameAnnotation.equals("PATHVARIABLE")) {
+                    if (nameAnnotation.equals("PATHPARAM")) {
                         restEndpoint.addParameter(
                                 new Parameter(
                                         Parameter.TypeParameter.PATH_PARAM,
@@ -106,4 +94,5 @@ public class SpringBoot implements Framework {
 
         return restEndpoint;
     }
+
 }
