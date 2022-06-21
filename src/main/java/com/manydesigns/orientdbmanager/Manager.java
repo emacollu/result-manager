@@ -28,6 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.util.*;
 
 /**
@@ -241,7 +242,16 @@ public class Manager {
             path.setRestEndpoint(restEndpoint);
         }
 
-        System.out.println(Utils.toJSON(paths));
+        var jsonModelPath = "./model.json";
+
+        if(managerArgs.getModel() != null)
+            jsonModelPath = managerArgs.getModel();
+
+        //Write into the file
+        try (FileWriter file = new FileWriter(jsonModelPath)) {
+            file.write(Utils.toJSON(paths));
+            log.info("Successfully updated json object to file...!!");
+        }
 
     }
 

@@ -23,6 +23,7 @@ public class MangerArgs {
     private AcceptedFramework acceptedFramework;
     private String openApi;
     private String commInjResult;
+    private String model;
 
     public static MangerArgs parse(String[] args) throws MissingFormatArgumentException, ParseException {
         var managerArgs = new MangerArgs();
@@ -35,6 +36,8 @@ public class MangerArgs {
                 managerArgs.setOpenApi(args[i + 1]);
             } else if (arg.equalsIgnoreCase("-r")) {
                 managerArgs.setCommInjResult(args[i + 1]);
+            } else if (arg.equalsIgnoreCase("-m")) {
+                managerArgs.setModel(args[i + 1]);
             }
         }
 
