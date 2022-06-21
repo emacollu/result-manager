@@ -25,21 +25,21 @@ public class MangerArgs {
     private String commInjResult;
 
     public static MangerArgs parse(String[] args) throws MissingFormatArgumentException, ParseException {
-        if (args.length < 6)
-            throw new MissingFormatArgumentException("missing arguments");
-
         var managerArgs = new MangerArgs();
-        for (var i = 0; i < 6; i += 2) {
+        for (var i = 0; i < args.length; i += 2) {
             var arg = args[i];
 
             if (arg.equalsIgnoreCase("-f")) {
-                managerArgs.setAcceptedFramework(AcceptedFramework.parse(args[i+1]));
+                managerArgs.setAcceptedFramework(AcceptedFramework.parse(args[i + 1]));
             } else if (arg.equalsIgnoreCase("-o")) {
                 managerArgs.setOpenApi(args[i + 1]);
             } else if (arg.equalsIgnoreCase("-r")) {
                 managerArgs.setCommInjResult(args[i + 1]);
             }
         }
+
+        if (managerArgs.getCommInjResult() == null || managerArgs.getAcceptedFramework() == null)
+            throw new MissingFormatArgumentException("missing arguments");
 
         return managerArgs;
     }

@@ -30,7 +30,7 @@ public class SpringBoot implements Framework {
                 classDeclaration.getAnnotations()) {
             if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("RESTCONTROLLER")) {
                 if (ann instanceof SingleMemberAnnotationExpr) {
-                    path = String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue());
+                    path = String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()).replace("\"", "");
                 }
                 break;
             }
@@ -80,7 +80,7 @@ public class SpringBoot implements Framework {
                         restEndpoint.addParameter(
                                 new Parameter(
                                         Parameter.TypeParameter.QUERY_PARAM,
-                                        String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()),
+                                        String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()).replace("\"", ""),
                                         Parameter.DEFAULT_FORMAT
                                 )
                         );
@@ -98,7 +98,7 @@ public class SpringBoot implements Framework {
                         restEndpoint.addParameter(
                                 new Parameter(
                                         Parameter.TypeParameter.PATH_PARAM,
-                                        String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()),
+                                        String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()).replace("\"", ""),
                                         Parameter.DEFAULT_FORMAT
                                 )
                         );

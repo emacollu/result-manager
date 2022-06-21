@@ -24,7 +24,7 @@ public class JaxRS implements Framework {
                 classDeclaration.getAnnotations()) {
             if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("PATH")) {
                 if (ann instanceof SingleMemberAnnotationExpr) {
-                    path = String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue());
+                    path = String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()).replace("\"", "");
                 }
                 break;
             }
@@ -36,35 +36,33 @@ public class JaxRS implements Framework {
     @Override
     public RestEndpoint restMethod(MethodDeclaration methodDeclaration) {
         RestEndpoint restEndpoint = null;
+        String path = "";
 
         for (var ann :
                 methodDeclaration.getAnnotations()) {
             if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("GET")) {
-                restEndpoint = new RestEndpoint(RestEndpoint.RestMethod.GET, "");
+                restEndpoint = new RestEndpoint(RestEndpoint.RestMethod.GET, path);
             }
 
             if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("POST")) {
-                restEndpoint = new RestEndpoint(RestEndpoint.RestMethod.POST, "");
+                restEndpoint = new RestEndpoint(RestEndpoint.RestMethod.POST, path);
             }
 
             if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("PUT")) {
-                restEndpoint = new RestEndpoint(RestEndpoint.RestMethod.PUT, "");
+                restEndpoint = new RestEndpoint(RestEndpoint.RestMethod.PUT, path);
             }
 
             if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("DELETE")) {
-                restEndpoint = new RestEndpoint(RestEndpoint.RestMethod.DELETE, "");
+                restEndpoint = new RestEndpoint(RestEndpoint.RestMethod.DELETE, path);
             }
 
-            if(restEndpoint != null) {
-                if (ann instanceof SingleMemberAnnotationExpr) {
-                    restEndpoint.setPath(String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()));
-                }
-
-                break;
+            if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("PATH") && ann instanceof SingleMemberAnnotationExpr) {
+                path = String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()).replace("\"", "");
             }
         }
 
         if (restEndpoint != null) {
+            restEndpoint.setPath(path);
             for (var param :
                     methodDeclaration.getParameters()) {
                 for (var ann :
@@ -74,7 +72,7 @@ public class JaxRS implements Framework {
                         restEndpoint.addParameter(
                                 new Parameter(
                                         Parameter.TypeParameter.QUERY_PARAM,
-                                        String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()),
+                                        String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()).replace("\"", ""),
                                         Parameter.DEFAULT_FORMAT
                                 )
                         );
@@ -83,7 +81,7 @@ public class JaxRS implements Framework {
                         restEndpoint.addParameter(
                                 new Parameter(
                                         Parameter.TypeParameter.PATH_PARAM,
-                                        String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()),
+                                        String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()).replace("\"", ""),
                                         Parameter.DEFAULT_FORMAT
                                 )
                         );
