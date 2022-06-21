@@ -6,6 +6,7 @@ import com.github.javaparser.ast.expr.SingleMemberAnnotationExpr;
 import com.manydesigns.orientdbmanager.frameworks.Framework;
 import com.manydesigns.orientdbmanager.frameworks.Parameter;
 import com.manydesigns.orientdbmanager.frameworks.RestEndpoint;
+import lombok.AllArgsConstructor;
 
 import java.util.Locale;
 
@@ -14,7 +15,10 @@ import java.util.Locale;
  * Date: 20/04/22
  * Time: 17:38
  */
+@AllArgsConstructor
 public class JaxRS implements Framework {
+
+    private Boolean findParameters;
 
     @Override
     public String pathController(ClassOrInterfaceDeclaration classDeclaration) {
@@ -61,7 +65,7 @@ public class JaxRS implements Framework {
             }
         }
 
-        if (restEndpoint != null) {
+        if (restEndpoint != null && findParameters) {
             restEndpoint.setPath(path);
             for (var param :
                     methodDeclaration.getParameters()) {

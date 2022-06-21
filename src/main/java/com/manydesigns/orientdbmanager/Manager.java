@@ -127,9 +127,9 @@ public class Manager {
         var frameworkSelected = managerArgs.getAcceptedFramework();
 
         if (frameworkSelected.equals(AcceptedFramework.SPRING_BOOT)) {
-            frameworkParser = new SpringBoot(hasOpenAPI);
+            frameworkParser = new SpringBoot(!hasOpenAPI);
         } else if (frameworkSelected.equals(AcceptedFramework.JAX_RS)) {
-            frameworkParser = new JaxRS();
+            frameworkParser = new JaxRS(!hasOpenAPI);
         } else {
             throw new Exception("no framework found");
         }

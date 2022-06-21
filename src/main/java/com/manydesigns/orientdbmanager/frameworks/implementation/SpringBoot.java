@@ -16,11 +16,10 @@ import java.util.Locale;
  * Date: 19/04/22
  * Time: 16:57
  */
-@NoArgsConstructor
 @AllArgsConstructor
 public class SpringBoot implements Framework {
 
-    private Boolean findParameters = true;
+    private Boolean findParameters;
 
     @Override
     public String pathController(ClassOrInterfaceDeclaration classDeclaration) {
