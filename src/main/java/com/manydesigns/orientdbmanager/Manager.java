@@ -151,6 +151,9 @@ public class Manager {
             assert methodDeclaration != null;
             var restEndpoint = frameworkParser.restMethod(methodDeclaration);
 
+            if (restEndpoint == null)
+                throw new Exception("Rest Endpoint not found!");
+
             ClassOrInterfaceDeclaration classDeclaration = null;
             for (var cd :
                     compilationUnit.findAll(ClassOrInterfaceDeclaration.class)) {
