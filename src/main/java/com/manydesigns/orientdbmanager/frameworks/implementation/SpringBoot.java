@@ -2,6 +2,7 @@ package com.manydesigns.orientdbmanager.frameworks.implementation;
 
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
+import com.github.javaparser.ast.expr.NormalAnnotationExpr;
 import com.github.javaparser.ast.expr.SingleMemberAnnotationExpr;
 import com.manydesigns.orientdbmanager.frameworks.Framework;
 import com.manydesigns.orientdbmanager.frameworks.Parameter;
@@ -30,8 +31,20 @@ public class SpringBoot implements Framework {
             if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("RESTCONTROLLER")) {
                 if (ann instanceof SingleMemberAnnotationExpr) {
                     path = String.valueOf(((SingleMemberAnnotationExpr) ann).getMemberValue()).replace("\"", "");
+                    break;
                 }
-                break;
+            } else if (ann.getName().getIdentifier().toUpperCase(Locale.ROOT).equals("REQUESTMAPPING")) {
+                if (ann instanceof NormalAnnotationExpr) {
+                    for (var p :
+                            ((NormalAnnotationExpr) ann).getPairs()) {
+                        if (p.getName().asString().toUpperCase(Locale.ROOT).equals("VALUE")) {
+                            path = String.valueOf(p.getValue()).replace("\"", "");
+                            break;
+                        }
+
+                    }
+                    break;
+                }
             }
         }
 
